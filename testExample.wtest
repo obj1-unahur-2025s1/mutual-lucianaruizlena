@@ -1,9 +1,49 @@
-import example.pepita
+import example.*
 
-describe "group of tests for pepita" {
+describe "Actividades" {
+  /*const pla1= new ViajeAPlaya(largo= 1000, idiomas=#{})
+  const pla2= new ViajeAPlaya(largo= 2000, idiomas=#{})
+    const gym1= new ClaseDeGimnasia(idiomas=#{})
+    const roque= new Socio(maximoActividades = 2,edad=50,actividades=[],idiomasQueHabla=#{})
 
-  test "pepita has initial energy" {
-    assert.equals(100, pepita.energy())
+  method initialize() {
+    roque.registrarActividad(pla1)
+    roque.registrarActividad(pla2)
   }
 
+  test "`roque.esAdoradorDelSol()` devuelve `true`." {
+    assert.that(roque.esAdoradorDelSol())
+  }
+
+  test "`roque.actividadesEsforzadas()` devuelve una colección que tiene solamente el viaje de 2000 metros de playa." {
+    assert.equals([pla2],roque.actividadesForzadas())    
+  }
+
+  test "si registramos que Roque realiza una clase de gimnasia, se debe generar un error." {
+    assert.throwsExceptionWithMessage("el socio alcanzó el máximo de actividades",{roque.registrarActividad(gym1)})
+  }*/
+
+
+  test "En el taller tl implica esfuerzo leer DonQuijote" {
+    const tl = new TallerLiterario(libros = [])
+    const donquijote = new Libro(autor="pipi",idiomaDelLibro="español",cantidadDePaginas=501)
+    tl.agregar(donquijote)
+    
+
+    assert.that(tl.implicaEsfuerzo())
+  }
+
+  test "Hay dos libros con el mismo autor" {
+    const tl2 = new TallerLiterario(libros = [])
+    const donquijote = new Libro(autor="pipi",idiomaDelLibro="español",cantidadDePaginas=200)
+    const harrypotter = new Libro(autor="pipi",idiomaDelLibro="español",cantidadDePaginas=400)
+    tl2.agregar(donquijote)
+    tl2.agregar(harrypotter)
+    
+
+    assert.that(tl2.implicaEsfuerzo())
+  }
 }
+
+  
+
